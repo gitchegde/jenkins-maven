@@ -14,10 +14,10 @@ pipeline{
                 sh 'mvn clean package'
             }
         }
-	stage("sonar quality check"){
+        stage("sonar quality check"){
             steps{
                 script{
-                    withSonarQubeEnv(installationName: 'sonar', credentialsId: 'sqube') {
+                    withSonarQubeEnv(installationName: 'sonar', credentialsId: '') {
                             sh 'mvn sonar:sonar '
                     }
 
